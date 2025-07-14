@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import { seoKeywords } from "@/lib/seo-keywords";
@@ -38,7 +39,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VDJT27S1YL"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VDJT27S1YL');
+          `}
+        </Script>
+        
+        {/* NativeBanner Ad */}
+        <Script
+          async="async"
+          data-cfasync="false"
+          src="//pl27160036.profitableratecpm.com/9264b32f2c322b50c937d621949c4054/invoke.js"
+          strategy="afterInteractive"
+        />
+        
+        {/* SocialBar Ad */}
+        <Script
+          type="text/javascript"
+          src="//pl27160043.profitableratecpm.com/a5/7f/d9/a57fd975ece4186b713973afa2392c7e.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body suppressHydrationWarning className="antialiased">
+        {/* NativeBanner Ad Container */}
+        <div id="container-9264b32f2c322b50c937d621949c4054"></div>
+        
         <ClientBody>{children}</ClientBody>
       </body>
     </html>
