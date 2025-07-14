@@ -56,7 +56,7 @@ export default function RootLayout({
         
         {/* NativeBanner Ad */}
         <Script
-          async="async"
+          async={true}
           data-cfasync="false"
           src="//pl27160036.profitableratecpm.com/9264b32f2c322b50c937d621949c4054/invoke.js"
           strategy="afterInteractive"
